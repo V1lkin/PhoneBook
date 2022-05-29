@@ -5,7 +5,16 @@ namespace ph
 {
     public class Programm
     {
-        static void Intro() //вывод команд для использования 
+        /*
+         Вывод выбора действий программы
+        1) Создание новой записи в телефонной книге
+        2) Редактирование информации в записи
+        3) Удаление записи
+        4) Вывод информации из выбранной записи
+        5) Вывод краткой информации о всех записях
+        6) Завершение работы программы
+        */
+        static void Intro() 
         {
             Console.WriteLine("PPPPP P   P PPPPP P   P PPPPP  PPPP  PPPPP PPPPP P    P");
             Console.WriteLine("P     P   P P   P P   P P      P   P P   P P   P P P P");
@@ -15,7 +24,7 @@ namespace ph
             Console.WriteLine("P     P   P PPPPP P   P PPPPP  PPPPP PPPPP PPPPP P    P" + "\n");
             //Красивый ввывод названия программы в консоль ^
             Console.WriteLine("Нажмите a, чтобы создать контакт" + "\n" + "Нажмите b, чтобы редактировать информацию о контакте" + "\n" + "Нажмите c, чтобы удалить контакт");
-            Console.WriteLine("Нажмите d, чтобы увидеть последний созданный контакт" + "\n" + "Нажмите e, чтобы увидеть список всех контактов" + "\n" + "Нажмите x, чтобы завершить работу" + "\n");
+            Console.WriteLine("Нажмите d, чтобы увидеть выбранный контакт" + "\n" + "Нажмите e, чтобы увидеть список всех контактов" + "\n" + "Нажмите x, чтобы завершить работу" + "\n");
         }
 
         static void Main(string[] args)
@@ -102,7 +111,7 @@ namespace ph
             while (true)
             {
                 Console.WriteLine("Введите номер телефона (доступны только цифры)");
-                phone = Console.ReadLine();
+                    phone = Console.ReadLine();
                 if (int.TryParse(phone, out int number))
                 {
                     break;
@@ -150,7 +159,7 @@ namespace ph
                         }
                         Console.WriteLine("Only digits allowed");
                         Console.Write("Enter new value: ");
-                        newValue = Console.ReadLine();
+                            newValue = Console.ReadLine();
                     }
                 }
                 if (newValue == "stop" || parameter == 0) break;
