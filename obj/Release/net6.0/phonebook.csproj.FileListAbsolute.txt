@@ -1,0 +1,15 @@
+/Users/egorn/Projects/phonebook/phonebook/bin/Release/net6.0/phonebook
+/Users/egorn/Projects/phonebook/phonebook/bin/Release/net6.0/phonebook.deps.json
+/Users/egorn/Projects/phonebook/phonebook/bin/Release/net6.0/phonebook.runtimeconfig.json
+/Users/egorn/Projects/phonebook/phonebook/bin/Release/net6.0/phonebook.dll
+/Users/egorn/Projects/phonebook/phonebook/bin/Release/net6.0/phonebook.pdb
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/phonebook.csproj.AssemblyReference.cache
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/phonebook.GeneratedMSBuildEditorConfig.editorconfig
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/phonebook.AssemblyInfoInputs.cache
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/phonebook.AssemblyInfo.cs
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/phonebook.csproj.CoreCompileInputs.cache
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/phonebook.dll
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/refint/phonebook.dll
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/phonebook.pdb
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/phonebook.genruntimeconfig.cache
+/Users/egorn/Projects/phonebook/phonebook/obj/Release/net6.0/ref/phonebook.dll

@@ -31,6 +31,7 @@ namespace ph
         {
             if (value.Length == 0) return false;
             else return true;
+            Console.WriteLine("Эти сведения обязательны для заполнения");
         }
 
         static void Main(string[] args)
@@ -106,17 +107,17 @@ namespace ph
 
         public List<Person> contactnew() //Создание новой записи в списке
         {
-            Console.WriteLine("Введите фамилию");
+            Console.WriteLine("Введите фамилию: ");
             string surname = Console.ReadLine();
-            Console.WriteLine("Введите имя");
+            Console.WriteLine("Введите имя: ");
             string name = Console.ReadLine();
-            Console.WriteLine("Введите отчество");
+            Console.WriteLine("Введите отчество: ");
             string patronymic = Console.ReadLine();
 
             string phone;
             while (true)
             {
-                Console.WriteLine("Введите номер телефона (доступны только цифры)");
+                Console.WriteLine("Введите номер телефона (доступны только цифры): ");
                     phone = Console.ReadLine();
                 if (int.TryParse(phone, out int number))
                 {
@@ -125,15 +126,15 @@ namespace ph
                 Console.WriteLine("Неверный ввод");
             }
 
-            Console.WriteLine("Введите страну");
+            Console.WriteLine("Введите страну: ");
             string country = Console.ReadLine();
-            Console.WriteLine("Введите дату рождения (в формате: дд.мм.гггг)");
+            Console.WriteLine("Введите дату рождения (в формате: дд.мм.гггг): ");
             string dateofbirth = Console.ReadLine();
-            Console.WriteLine("Введите компанию");
+            Console.WriteLine("Введите компанию: ");
             string corp = Console.ReadLine();
-            Console.WriteLine("Введите позицию в списке");
+            Console.WriteLine("Введите позицию в списке: ");
             string pos = Console.ReadLine();
-            Console.WriteLine("Введите доп. информацию");
+            Console.WriteLine("Введите доп. информацию: ");
             string info = Console.ReadLine();
 
             Person person = new Person(surname, name, patronymic, phone, country, dateofbirth, corp, pos, info);
@@ -144,8 +145,7 @@ namespace ph
         public List<Person> contactedit(int entrynumber) //Редактирование элементов из списка путем создания новых
         {
             Console.Write("1 - фамилия" + "\n" + "2 - имя" + "\n" + "3 - отчество" + "\n" + "4 - номер телефона" + "\n" + "5 - страна" + "\n" + "6 - дата рождения" + "\n" );
-            Console.WriteLine("7 - компания" + "\n" + "8 - позиция в списке" + "\n" + "9 - доп. информация");
-            Console.WriteLine("Введите номер параметра для изменения: ");
+            Console.WriteLine("7 - компания" + "\n" + "8 - позиция в списке" + "\n" + "9 - доп. информация" + "\n" + "Для выхода в главное меню дважды нажмите Enter");
             while (true)
             {
                 Console.Write("Введите номер параметра: ");
@@ -157,22 +157,17 @@ namespace ph
                 if (parameter == 4)
                 {
                     while (true)
-                    {
+                     {
+                        if (Programm.IsNeccesaryValue(newValue))
                         {
-                            while (true)
-                            {
-                                if (Programm.IsNeccesaryValue(newValue))
-                                {
-                                    if (int.TryParse(newValue, out int number))
-                                    {
-                                        phonebook[entrynumber].Phone = newValue;
+                             if (int.TryParse(newValue, out int number))
+                             {
+                                 phonebook[entrynumber].Phone = newValue;
                                         
-                                    }
-                                    Console.WriteLine("Only digits allowed");
-                                    Console.Write("Enter new value: ");
-                                    newValue = Console.ReadLine();
-                                }
-                            }
+                             }
+                            Console.WriteLine("Доступны только цифры: ");
+                            Console.Write("Введите новое значение: ");
+                            newValue = Console.ReadLine();
                         }
                     }
                 }
@@ -185,8 +180,10 @@ namespace ph
                         if (Programm.IsNeccesaryValue(newValue))
                         {
                             phonebook[entrynumber].SurName = newValue;
-                            
+                            break;
                         }
+                        Console.Write("Введите новое значение: ");
+                        newValue = Console.ReadLine();
                     }
                 }
                 else if (parameter == 2)
@@ -196,8 +193,10 @@ namespace ph
                         if (Programm.IsNeccesaryValue(newValue))
                         {
                             phonebook[entrynumber].Name = newValue;
-                            
+                            break;
                         }
+                        Console.Write("Введите новое значение: ");
+                        newValue = Console.ReadLine();
                     }
                 }
                 else if (parameter == 3) phonebook[entrynumber].Patronymic = newValue;
@@ -208,8 +207,10 @@ namespace ph
                         if (Programm.IsNeccesaryValue(newValue))
                         {
                             phonebook[entrynumber].Country = newValue;
-                            
+                            break;
                         }
+                        Console.Write("Введите новое значение: ");
+                        newValue = Console.ReadLine();
                     }
                 }
                 else if (parameter == 6) phonebook[entrynumber].DateOfBirth = newValue;
