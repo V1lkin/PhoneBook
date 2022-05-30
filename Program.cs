@@ -27,6 +27,12 @@ namespace ph
             Console.WriteLine("Нажмите d, чтобы увидеть выбранный контакт" + "\n" + "Нажмите e, чтобы увидеть список всех контактов" + "\n" + "Нажмите x, чтобы завершить работу" + "\n");
         }
 
+        public static bool IsNeccesaryValue(string value) //Проверка на ввод для обязательных пунктов
+        {
+            if (value.Length == 0) return false;
+            else return true;
+        }
+
         static void Main(string[] args)
         {
             Intro();
@@ -152,22 +158,60 @@ namespace ph
                 {
                     while (true)
                     {
-                        if (int.TryParse(newValue, out int number))
                         {
-                            phonebook[entrynumber].Phone = newValue;
-                            break;
+                            while (true)
+                            {
+                                if (Programm.IsNeccesaryValue(newValue))
+                                {
+                                    if (int.TryParse(newValue, out int number))
+                                    {
+                                        phonebook[entrynumber].Phone = newValue;
+                                        
+                                    }
+                                    Console.WriteLine("Only digits allowed");
+                                    Console.Write("Enter new value: ");
+                                    newValue = Console.ReadLine();
+                                }
+                            }
                         }
-                        Console.WriteLine("Only digits allowed");
-                        Console.Write("Enter new value: ");
-                            newValue = Console.ReadLine();
                     }
                 }
                 if (newValue == "stop" || parameter == 0) break;
 
-                if (parameter == 1) phonebook[entrynumber].SurName = newValue;
-                else if (parameter == 2) phonebook[entrynumber].Name = newValue;
+                if (parameter == 1)
+                {
+                    while (true)
+                    {
+                        if (Programm.IsNeccesaryValue(newValue))
+                        {
+                            phonebook[entrynumber].SurName = newValue;
+                            
+                        }
+                    }
+                }
+                else if (parameter == 2)
+                {
+                    while (true)
+                    {
+                        if (Programm.IsNeccesaryValue(newValue))
+                        {
+                            phonebook[entrynumber].Name = newValue;
+                            
+                        }
+                    }
+                }
                 else if (parameter == 3) phonebook[entrynumber].Patronymic = newValue;
-                else if (parameter == 5) phonebook[entrynumber].Country = newValue;
+                else if (parameter == 5)
+                {
+                    while (true)
+                    {
+                        if (Programm.IsNeccesaryValue(newValue))
+                        {
+                            phonebook[entrynumber].Country = newValue;
+                            
+                        }
+                    }
+                }
                 else if (parameter == 6) phonebook[entrynumber].DateOfBirth = newValue;
                 else if (parameter == 7) phonebook[entrynumber].Corp = newValue;
                 else if (parameter == 8) phonebook[entrynumber].Pos = newValue;
