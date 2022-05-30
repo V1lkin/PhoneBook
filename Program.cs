@@ -64,6 +64,7 @@ namespace ph
                             if (PhoneBook.phonebook.Count == 0) Console.WriteLine("Необходимо добавить запись");
                             else
                             {
+                                Console.WriteLine("Введите номер записи, которую нужно удалить (список начинается с 0)");
                                 int contactNumber = int.Parse(Console.ReadLine());
                                 phonebook.contactdelete(contactNumber);
                                 break;
@@ -175,7 +176,7 @@ namespace ph
             string dateofbirth = Console.ReadLine();
             Console.WriteLine("Введите компанию: ");
             string corp = Console.ReadLine();
-            Console.WriteLine("Введите позицию в списке: ");
+            Console.WriteLine("Должность: ");
             string pos = Console.ReadLine();
             Console.WriteLine("Введите доп. информацию: ");
             string info = Console.ReadLine();
@@ -189,7 +190,7 @@ namespace ph
         {
             bool a = true;
             Console.Write("1 - фамилия" + "\n" + "2 - имя" + "\n" + "3 - отчество" + "\n" + "4 - номер телефона" + "\n" + "5 - страна" + "\n" + "6 - дата рождения" + "\n" );
-            Console.WriteLine("7 - компания" + "\n" + "8 - позиция в списке" + "\n" + "9 - доп. информация" + "\n" + "Для выхода в главное меню дважды нажмите Enter");
+            Console.WriteLine("7 - компания" + "\n" + "8 - должность" + "\n" + "9 - доп. информация" + "\n" + "Для выхода в главное меню дважды нажмите Enter");
             while (true)
             {
                 Console.Write("Введите номер параметра: ");
@@ -200,8 +201,6 @@ namespace ph
 
                 if (parameter == 4)
                 {
-                    while (true)
-                    {
                         while (a == true)
                         { 
                             if (int.TryParse(newValue, out int number))
@@ -222,7 +221,6 @@ namespace ph
                             }
 
                         }
-                    }
                 }
                     if (newValue == "stop" || parameter == 0) break;
 
@@ -300,7 +298,7 @@ namespace ph
             Console.WriteLine($"Старан: {phonebook[entrynumber].Country}");
             Console.WriteLine($"Дата рождения: {phonebook[entrynumber].DateOfBirth}");
             Console.WriteLine($"Компания: {phonebook[entrynumber].Corp}");
-            Console.WriteLine($"Место в списке: {phonebook[entrynumber].Pos}");
+            Console.WriteLine($"Должность: {phonebook[entrynumber].Pos}");
             Console.WriteLine($"Доп. информация: {phonebook[entrynumber].Info}");
         }
 
