@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tytu2\\AppData\\Local\\Temp\\Rar$DRa15812.12912\\PhoneBook-main\\phonebook.csproj": {}
+    "/Users/egorn/Projects/phonebook/phonebook/phonebook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tytu2\\AppData\\Local\\Temp\\Rar$DRa15812.12912\\PhoneBook-main\\phonebook.csproj": {
+    "/Users/egorn/Projects/phonebook/phonebook/phonebook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tytu2\\AppData\\Local\\Temp\\Rar$DRa15812.12912\\PhoneBook-main\\phonebook.csproj",
+        "projectUniqueName": "/Users/egorn/Projects/phonebook/phonebook/phonebook.csproj",
         "projectName": "phonebook",
-        "projectPath": "C:\\Users\\tytu2\\AppData\\Local\\Temp\\Rar$DRa15812.12912\\PhoneBook-main\\phonebook.csproj",
-        "packagesPath": "C:\\Users\\tytu2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tytu2\\AppData\\Local\\Temp\\Rar$DRa15812.12912\\PhoneBook-main\\obj\\",
+        "projectPath": "/Users/egorn/Projects/phonebook/phonebook/phonebook.csproj",
+        "packagesPath": "/Users/egorn/.nuget/packages/",
+        "outputPath": "/Users/egorn/Projects/phonebook/phonebook/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tytu2\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/egorn/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

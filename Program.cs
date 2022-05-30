@@ -30,7 +30,8 @@ namespace ph
         public static bool IsNeccesaryValue(string value) //Проверка на ввод для обязательных пунктов
         {
             if (value.Length == 0) return false;
-            else return true;     
+            else return true;
+            Console.WriteLine("Эти сведения обязательны для заполнения");
         }
 
         static void Main(string[] args)
@@ -52,7 +53,6 @@ namespace ph
                             if (PhoneBook.phonebook.Count == 0) Console.WriteLine("Необходимо добавить запись");
                             else
                             {
-                                Console.WriteLine("Введите номер записи, требующей изменений (список начинается с 0)");
                                 int contactNumber = int.Parse(Console.ReadLine());
                                 phonebook.contactedit(contactNumber);
                                 break;
@@ -64,7 +64,6 @@ namespace ph
                             if (PhoneBook.phonebook.Count == 0) Console.WriteLine("Необходимо добавить запись");
                             else
                             {
-                                Console.WriteLine("Введите номер записи, которую нужно удалить (список начинается с 0)");
                                 int contactNumber = int.Parse(Console.ReadLine());
                                 phonebook.contactdelete(contactNumber);
                                 break;
@@ -76,7 +75,6 @@ namespace ph
                             if (PhoneBook.phonebook.Count == 0) Console.WriteLine("Необходимо добавить запись");
                             else
                             {
-                                Console.WriteLine("Введите номер записи, краткую информацию которой хотите просмотреть (список начинается с 0)");
                                 int contactNumber = int.Parse(Console.ReadLine());
                                 phonebook.contactviewselected(contactNumber);
                                 break;
@@ -109,74 +107,32 @@ namespace ph
 
         public List<Person> contactnew() //Создание новой записи в списке
         {
-            bool a = true;
-            string surname = "";
-            while (a == true)
-            { 
-                Console.WriteLine("Введите фамилию: ");
-                surname = Console.ReadLine();
-                if (surname.Length > 0)
-                {
-                    a = false;
-                    
-                }
-                else
-                {
-                    Console.WriteLine("Это обязательные данные для ввода!");
-                }
-            }
-            a = true;
-            string name = "";
-            while (a == true)
-            {
-                Console.WriteLine("Введите имя: ");
-                name = Console.ReadLine();
-                if (name.Length > 0)
-                {
-                    a = false;
-                    
-                }
-                else
-                {
-                    Console.WriteLine("Это обязательные данные для ввода!");
-                }
-            }
+            Console.WriteLine("Введите фамилию: ");
+            string surname = Console.ReadLine();
+            Console.WriteLine("Введите имя: ");
+            string name = Console.ReadLine();
             Console.WriteLine("Введите отчество: ");
             string patronymic = Console.ReadLine();
 
-            a = true;
             string phone;
             while (true)
-
             {
-                    Console.WriteLine("Введите номер телефона (доступны только цифры): ");
+                Console.WriteLine("Введите номер телефона (доступны только цифры): ");
                     phone = Console.ReadLine();
-                    if (int.TryParse(phone, out int number))
-                    {
-                        break;
-                    }
-                    Console.WriteLine("Неверный ввод");
+                if (int.TryParse(phone, out int number))
+                {
+                    break;
+                }
+                Console.WriteLine("Неверный ввод");
             }
 
-            string country = "";
-            while (a == true)
-                {
-                    Console.WriteLine("Введите страну: ");
-                    country = Console.ReadLine();
-                    if (country.Length > 0)
-                    {
-                        a = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Это обязательные данные для ввода!");
-                    }
-            }
+            Console.WriteLine("Введите страну: ");
+            string country = Console.ReadLine();
             Console.WriteLine("Введите дату рождения (в формате: дд.мм.гггг): ");
             string dateofbirth = Console.ReadLine();
             Console.WriteLine("Введите компанию: ");
             string corp = Console.ReadLine();
-            Console.WriteLine("Должность: ");
+            Console.WriteLine("Введите позицию в списке: ");
             string pos = Console.ReadLine();
             Console.WriteLine("Введите доп. информацию: ");
             string info = Console.ReadLine();
@@ -188,9 +144,8 @@ namespace ph
         }
         public List<Person> contactedit(int entrynumber) //Редактирование элементов из списка путем создания новых
         {
-            bool a = true;
             Console.Write("1 - фамилия" + "\n" + "2 - имя" + "\n" + "3 - отчество" + "\n" + "4 - номер телефона" + "\n" + "5 - страна" + "\n" + "6 - дата рождения" + "\n" );
-            Console.WriteLine("7 - компания" + "\n" + "8 - должность" + "\n" + "9 - доп. информация" + "\n" + "Для выхода в главное меню дважды нажмите Enter");
+            Console.WriteLine("7 - компания" + "\n" + "8 - позиция в списке" + "\n" + "9 - доп. информация" + "\n" + "Для выхода в главное меню дважды нажмите Enter");
             while (true)
             {
                 Console.Write("Введите номер параметра: ");
@@ -201,28 +156,22 @@ namespace ph
 
                 if (parameter == 4)
                 {
-                        while (a == true)
-                        { 
-                            if (int.TryParse(newValue, out int number))
-                            {
-                                phonebook[entrynumber].Phone = newValue;
-
-                            }
-                            Console.WriteLine("Доступны только цифры ");
+                    while (true)
+                     {
+                        if (Programm.IsNeccesaryValue(newValue))
+                        {
+                             if (int.TryParse(newValue, out int number))
+                             {
+                                 phonebook[entrynumber].Phone = newValue;
+                                        
+                             }
+                            Console.WriteLine("Доступны только цифры: ");
                             Console.Write("Введите новое значение: ");
                             newValue = Console.ReadLine();
-                            if (newValue.Length > 0)
-                            {
-                                a = false;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Обязательно нужно заполнить эту информацию при изменении");
-                            }
-
                         }
+                    }
                 }
-                    if (newValue == "stop" || parameter == 0) break;
+                if (newValue == "stop" || parameter == 0) break;
 
                 if (parameter == 1)
                 {
@@ -232,10 +181,6 @@ namespace ph
                         {
                             phonebook[entrynumber].SurName = newValue;
                             break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Эти сведения обязательны для заполнения!");
                         }
                         Console.Write("Введите новое значение: ");
                         newValue = Console.ReadLine();
@@ -250,10 +195,6 @@ namespace ph
                             phonebook[entrynumber].Name = newValue;
                             break;
                         }
-                        else
-                        {
-                            Console.WriteLine("Эти сведения обязательны для заполнения!");
-                        }
                         Console.Write("Введите новое значение: ");
                         newValue = Console.ReadLine();
                     }
@@ -267,10 +208,6 @@ namespace ph
                         {
                             phonebook[entrynumber].Country = newValue;
                             break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Эти сведения обязательны для заполнения!");
                         }
                         Console.Write("Введите новое значение: ");
                         newValue = Console.ReadLine();
@@ -298,7 +235,7 @@ namespace ph
             Console.WriteLine($"Старан: {phonebook[entrynumber].Country}");
             Console.WriteLine($"Дата рождения: {phonebook[entrynumber].DateOfBirth}");
             Console.WriteLine($"Компания: {phonebook[entrynumber].Corp}");
-            Console.WriteLine($"Должность: {phonebook[entrynumber].Pos}");
+            Console.WriteLine($"Место в списке: {phonebook[entrynumber].Pos}");
             Console.WriteLine($"Доп. информация: {phonebook[entrynumber].Info}");
         }
 
