@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/egorn/Projects/phonebook/phonebook/phonebook.csproj",
-      "projectName": "phonebook",
-      "projectPath": "/Users/egorn/Projects/phonebook/phonebook/phonebook.csproj",
+      "projectUniqueName": "/Users/egorn/Projects/dfds/dfds/dfds.csproj",
+      "projectName": "dfds",
+      "projectPath": "/Users/egorn/Projects/dfds/dfds/dfds.csproj",
       "packagesPath": "/Users/egorn/.nuget/packages/",
-      "outputPath": "/Users/egorn/Projects/phonebook/phonebook/obj/",
+      "outputPath": "/Users/egorn/Projects/dfds/dfds/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/egorn/.nuget/NuGet/NuGet.Config"

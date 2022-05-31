@@ -1,0 +1,15 @@
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/dfds.csproj.AssemblyReference.cache
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/dfds.GeneratedMSBuildEditorConfig.editorconfig
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/dfds.AssemblyInfoInputs.cache
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/dfds.AssemblyInfo.cs
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/dfds.csproj.CoreCompileInputs.cache
+/Users/egorn/Projects/dfds/dfds/bin/Debug/net6.0/dfds
+/Users/egorn/Projects/dfds/dfds/bin/Debug/net6.0/dfds.deps.json
+/Users/egorn/Projects/dfds/dfds/bin/Debug/net6.0/dfds.runtimeconfig.json
+/Users/egorn/Projects/dfds/dfds/bin/Debug/net6.0/dfds.dll
+/Users/egorn/Projects/dfds/dfds/bin/Debug/net6.0/dfds.pdb
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/dfds.dll
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/refint/dfds.dll
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/dfds.pdb
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/dfds.genruntimeconfig.cache
+/Users/egorn/Projects/dfds/dfds/obj/Debug/net6.0/ref/dfds.dll
